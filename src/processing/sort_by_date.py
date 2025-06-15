@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def sort_by_date(dicts: list[dict[str, str]], reverse: bool = True) -> list[dict[str, str]]:
     """Принимает список словарей и возвращает новый, отсортированный по дате"""
     return sorted(dicts, key=lambda x: datetime.fromisoformat(x['date']), reverse=reverse)

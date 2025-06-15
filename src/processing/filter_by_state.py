@@ -1,6 +1,7 @@
-def filter_by_state(dicts, state='EXECUTED'):
+def filter_by_state(dicts: list, state='EXECUTED') -> list:
     """Принимает список словарей и возвращает новый список, содержащий словари с определенным значением ключа"""
     return [d for d in dicts if d.get('state') == state]
+
 
 print(
     filter_by_state(
