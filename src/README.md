@@ -8,3 +8,7 @@
 https://github.com/JuliaFrolova01/homework1/pull/1
 3. Установите зависимости: 
 pip install -r requirements.txt
+
+## Тесты
+1. Все тесты находятся в папке tests
+2. Чтобы запустить тестирование, необходимо в терминале ввести команду pytest

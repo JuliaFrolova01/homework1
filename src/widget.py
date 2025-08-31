@@ -1,16 +1,16 @@
-from masks.card_number import get_mask_card_number
+from src.masks.card_number import get_mask_card_number
 
 
-def mask_account_card(account_card: str) -> str:
+def mask_account_card(card_number: str) -> str:
     '''Принимает номер карты и возвращает маску'''
-    if "Счет" in account_card:
-        mask_account_card = f"{account_card[:4]} **{account_card[-5:-1]}"
+    if "Счет" in card_number:
+        mask_account_card = f"{card_number[:4]} **{card_number[-5:]}"
         return mask_account_card
     else:
-        tip_card = f"{account_card[:-16]}"
+        type_card = f"{card_number.split()[0]} {card_number.split()[1]} "
 
-        num_card = str(get_mask_card_number())
-        mask_account_card = tip_card + num_card
+        card_num = get_mask_card_number(card_number.split()[-1])
+        mask_account_card = type_card + card_num
         return mask_account_card
 
 
